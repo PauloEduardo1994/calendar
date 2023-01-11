@@ -1,10 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+
+import { Provider } from '@siakit/core'
+import { DialogProvider } from '@siakit/dialog'
+import { LoadingProvider } from '@siakit/loading'
+import { ToastProvider } from '@siakit/toast'
+
+import { App } from './App'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider>
+    <ToastProvider>
+      <DialogProvider>
+        <LoadingProvider>
+          <App />
+        </LoadingProvider>
+      </DialogProvider>
+    </ToastProvider>
+  </Provider>,
 )

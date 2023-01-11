@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import { Flex } from '@siakit/layout'
+import { Text } from '@siakit/text'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Container } from './styled'
 
+export function App() {
   return (
-    <p>teste</p>
+    <Flex>
+      <Container padding>
+        <Text>Teste</Text>
+      </Container>
+    </Flex>
   )
 }
-
-export default App
