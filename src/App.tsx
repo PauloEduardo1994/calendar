@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 
+import { Flex } from '@siakit/layout'
+import { Text } from '@siakit/text'
+
 import CalendarHeader from './components/CalendarHeader'
 import EventModal from './components/EventModal'
 import Month from './components/Month'
@@ -15,16 +18,19 @@ export function App() {
     setCurrentMonth(getMonth(monthIndex))
   }, [monthIndex])
   return (
-    <React.Fragment>
-      {showEventModal && <EventModal />}
+    <Flex flex align="center" justify="center">
+      <Text size="2xl">{"It's not complete yet"}</Text>
+    </Flex>
+    // <React.Fragment>
+    //   {showEventModal && <EventModal />}
 
-      <div className="h-screen flex flex-col">
-        <CalendarHeader />
-        <div className="flex flex-1">
-          <Sidebar />
-          <Month month={currenMonth} />
-        </div>
-      </div>
-    </React.Fragment>
+    //   <div className="h-screen flex flex-col">
+    //     <CalendarHeader />
+    //     <div className="flex flex-1">
+    //       <Sidebar />
+    //       <Month month={currenMonth} />
+    //     </div>
+    //   </div>
+    // </React.Fragment>
   )
 }
