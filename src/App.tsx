@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import { Flex } from '@siakit/layout'
+import dayjs from 'dayjs'
+
+import { Card } from '@siakit/card'
+import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
 
 import CalendarHeader from './components/CalendarHeader'
@@ -10,6 +13,10 @@ import Sidebar from './components/Sidebar'
 import GlobalContext from './context/GlobalContext'
 import { getMonth } from './util'
 
+// const days = {
+//   day =
+// }
+
 export function App() {
   const [currenMonth, setCurrentMonth] = useState(getMonth())
   const { monthIndex, showEventModal } = useContext(GlobalContext)
@@ -17,9 +24,24 @@ export function App() {
   useEffect(() => {
     setCurrentMonth(getMonth(monthIndex))
   }, [monthIndex])
+
+  const NewDate = dayjs()
+
+  console.log(NewDate)
+
   return (
-    <Flex flex align="center" justify="center">
-      <Text size="2xl">{"It's not complete yet"}</Text>
+    <Flex flex>
+      <Flex width={256}>teste</Flex>
+      <Flex flex direction="column">
+        <Flex align="center" justify="center" height={64}>
+          Header
+        </Flex>
+        <Grid gap flex padding rows={5} columns={7}>
+          <Card align="center" justify="center">
+            {/* {for()} */}
+          </Card>
+        </Grid>
+      </Flex>
     </Flex>
     // <React.Fragment>
     //   {showEventModal && <EventModal />}
