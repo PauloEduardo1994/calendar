@@ -18,6 +18,9 @@ function Carrossel() {
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
+    slides: {
+      spacing: 16,
+    },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
     },
