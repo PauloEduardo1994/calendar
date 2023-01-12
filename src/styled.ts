@@ -24,6 +24,6 @@ export const ColorDay = styled(Flex, {
   borderRadius: '50%',
   alignItems: 'center',
   justifyContent: 'center',
-  paddingLeft: '4px',
-  paddingRight: '4px',
+  paddingLeft: '5px',
+  paddingRight: '5px',
 })
