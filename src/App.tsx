@@ -1,29 +1,343 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import dayjs from 'dayjs'
+import { useKeenSlider } from 'keen-slider/react'
 
 import { Card } from '@siakit/card'
+import { useTheme } from '@siakit/core'
+import { Heading } from '@siakit/heading'
 import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
 
-import CalendarHeader from './components/CalendarHeader'
-import EventModal from './components/EventModal'
-import Month from './components/Month'
-import Sidebar from './components/Sidebar'
-import GlobalContext from './context/GlobalContext'
-import { getMonth } from './util'
+import 'keen-slider/keen-slider.min.css'
+import './styles.css'
+import { CardMonth, ColorDay } from './styled'
 
-// const days = {
-//   day =
-// }
+function Carrossel() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [loaded, setLoaded] = useState(false)
+  const [sliderRef, instanceRef] = useKeenSlider({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
+      setLoaded(true)
+    },
+  })
+
+  return (
+    <Flex width={20} direction="column" flex margin>
+      <div className="navigation-wrapper">
+        <div ref={sliderRef} className="keen-slider">
+          <CardMonth padding className="keen-slider__slide">
+            <Flex flex direction="column">
+              <Flex justify="center" flex>
+                <Heading>Janeiro</Heading>
+              </Flex>
+              <Grid flex padding gap columns={7}>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+                <Text>5</Text>
+                <Text>6</Text>
+                <Text>7</Text>
+                <Text>8</Text>
+                <Text>9</Text>
+                <Text>10</Text>
+                <ColorDay>
+                  <Text>11</Text>
+                </ColorDay>
+                <Text>12</Text>
+                <Text>13</Text>
+                <Text>14</Text>
+                <Text>15</Text>
+                <Text>16</Text>
+                <Text>17</Text>
+                <Text>18</Text>
+                <Text>19</Text>
+                <Text>20</Text>
+                <Text>21</Text>
+                <Text>22</Text>
+                <Text>23</Text>
+                <Text>24</Text>
+                <Text>25</Text>
+                <Text>26</Text>
+                <Text>27</Text>
+                <Text>28</Text>
+                <Text>29</Text>
+                <Text>30</Text>
+                <Text>31</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+              </Grid>
+              <Flex align="end" justify="end" flex>
+                <Heading size="xs">2023</Heading>
+              </Flex>
+            </Flex>
+          </CardMonth>
+          <CardMonth padding className="keen-slider__slide">
+            <Flex flex direction="column">
+              <Flex justify="center" flex>
+                <Heading>Fevereio</Heading>
+              </Flex>
+              <Grid flex padding gap columns={7}>
+                <Text>29</Text>
+                <Text>30</Text>
+                <Text>31</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+                <Text>5</Text>
+                <Text>6</Text>
+                <Text>7</Text>
+                <Text>8</Text>
+                <Text>9</Text>
+                <Text>10</Text>
+                <Text>11</Text>
+                <Text>12</Text>
+                <Text>13</Text>
+                <Text>14</Text>
+                <Text>15</Text>
+                <Text>16</Text>
+                <Text>17</Text>
+                <Text>18</Text>
+                <Text>19</Text>
+                <Text>20</Text>
+                <Text>21</Text>
+                <Text>22</Text>
+                <Text>23</Text>
+                <Text>24</Text>
+                <Text>25</Text>
+                <Text>26</Text>
+                <Text>27</Text>
+                <Text>28</Text>
+              </Grid>
+              <Flex align="end" justify="end" flex>
+                <Heading size="xs">2023</Heading>
+              </Flex>
+            </Flex>
+          </CardMonth>
+          <CardMonth padding className="keen-slider__slide">
+            <Flex flex direction="column">
+              <Flex justify="center" flex>
+                <Heading>Março</Heading>
+              </Flex>
+              <Grid flex padding gap columns={7}>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+                <Text>5</Text>
+                <Text>6</Text>
+                <Text>7</Text>
+                <Text>8</Text>
+                <Text>9</Text>
+                <Text>10</Text>
+                <Text>11</Text>
+                <Text>12</Text>
+                <Text>13</Text>
+                <Text>14</Text>
+                <Text>15</Text>
+                <Text>16</Text>
+                <Text>17</Text>
+                <Text>18</Text>
+                <Text>19</Text>
+                <Text>20</Text>
+                <Text>21</Text>
+                <Text>22</Text>
+                <Text>23</Text>
+                <Text>24</Text>
+                <Text>25</Text>
+                <Text>26</Text>
+                <Text>27</Text>
+                <Text>28</Text>
+                <Text>29</Text>
+                <Text>30</Text>
+                <Text>31</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+              </Grid>
+              <Flex align="end" justify="end" flex>
+                <Heading size="xs">2023</Heading>
+              </Flex>
+            </Flex>
+          </CardMonth>
+          <CardMonth padding className="keen-slider__slide">
+            <Flex flex direction="column">
+              <Flex justify="center" flex>
+                <Heading>Abril</Heading>
+              </Flex>
+              <Grid flex padding gap columns={7}>
+                <Text>29</Text>
+                <Text>30</Text>
+                <Text>31</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+                <Text>5</Text>
+                <Text>6</Text>
+                <Text>7</Text>
+                <Text>8</Text>
+                <Text>9</Text>
+                <Text>10</Text>
+                <Text>11</Text>
+                <Text>12</Text>
+                <Text>13</Text>
+                <Text>14</Text>
+                <Text>15</Text>
+                <Text>16</Text>
+                <Text>17</Text>
+                <Text>18</Text>
+                <Text>19</Text>
+                <Text>20</Text>
+                <Text>21</Text>
+                <Text>22</Text>
+                <Text>23</Text>
+                <Text>24</Text>
+                <Text>25</Text>
+                <Text>26</Text>
+                <Text>27</Text>
+                <Text>28</Text>
+                <Text>29</Text>
+                <Text>30</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+              </Grid>
+              <Flex align="end" justify="end" flex>
+                <Heading size="xs">2023</Heading>
+              </Flex>
+            </Flex>
+          </CardMonth>
+          <CardMonth padding className="keen-slider__slide">
+            <Flex flex direction="column">
+              <Flex justify="center" flex>
+                <Heading>Maio</Heading>
+              </Flex>
+              <Grid flex padding gap columns={7}>
+                <Text>26</Text>
+                <Text>27</Text>
+                <Text>28</Text>
+                <Text>29</Text>
+                <Text>30</Text>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+                <Text>4</Text>
+                <Text>5</Text>
+                <Text>6</Text>
+                <Text>7</Text>
+                <Text>8</Text>
+                <Text>9</Text>
+                <Text>10</Text>
+                <Text>11</Text>
+                <Text>12</Text>
+                <Text>13</Text>
+                <Text>14</Text>
+                <Text>15</Text>
+                <Text>16</Text>
+                <Text>17</Text>
+                <Text>18</Text>
+                <Text>19</Text>
+                <Text>20</Text>
+                <Text>21</Text>
+                <Text>22</Text>
+                <Text>23</Text>
+                <Text>24</Text>
+                <Text>25</Text>
+                <Text>26</Text>
+                <Text>27</Text>
+                <Text>28</Text>
+                <Text>29</Text>
+                <Text>30</Text>
+              </Grid>
+              <Flex align="end" justify="end" flex>
+                <Heading size="xs">2023</Heading>
+              </Flex>
+            </Flex>
+          </CardMonth>
+        </div>
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow
+              left
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
+
+            <Arrow
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              }
+            />
+          </>
+        )}
+
+        {loaded && instanceRef.current && (
+          <div className="dots">
+            {[
+              ...Array(instanceRef.current.track.details.slides.length).keys(),
+            ].map((idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(idx)
+                  }}
+                  className={'dot' + (currentSlide === idx ? ' active' : '')}
+                ></button>
+              )
+            })}
+          </div>
+        )}
+      </div>
+    </Flex>
+  )
+}
+
+function Arrow(props: any) {
+  const disabeld = props.disabled ? ' arrow--disabled' : ''
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? 'arrow--left' : 'arrow--right'
+      } ${disabeld}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  )
+}
 
 export function App() {
-  const [currenMonth, setCurrentMonth] = useState(getMonth())
-  const { monthIndex, showEventModal } = useContext(GlobalContext)
+  const { togggleTheme, changeColor } = useTheme()
 
-  useEffect(() => {
-    setCurrentMonth(getMonth(monthIndex))
-  }, [monthIndex])
+  togggleTheme('dark')
+  changeColor('violet')
 
   const NewDate = dayjs()
 
@@ -31,28 +345,124 @@ export function App() {
 
   return (
     <Flex flex>
-      <Flex width={256}>teste</Flex>
+      <Flex width={320}>
+        <Carrossel />
+      </Flex>
       <Flex flex direction="column">
         <Flex align="center" justify="center" height={64}>
-          Header
+          <Heading>Janeiro</Heading>
         </Flex>
-        <Grid gap flex padding rows={5} columns={7}>
+        <Grid gap={8} flex padding rows={5} columns={7}>
           <Card align="center" justify="center">
-            {/* {for()} */}
+            <Text>1</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>2</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>3</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>4</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>5</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>6</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>7</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>8</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>9</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>10</Text>
+          </Card>
+          <CardMonth align="center" justify="center">
+            <Heading size="xs">11</Heading>
+          </CardMonth>
+          <Card align="center" justify="center">
+            <Text>12</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>13</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>14</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>15</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>16</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>17</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>18</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>19</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>20</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>21</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>22</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>23</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>24</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>25</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>26</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>27</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>28</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>29</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>30</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>31</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>1</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>2</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>3</Text>
+          </Card>
+          <Card align="center" justify="center">
+            <Text>4</Text>
           </Card>
         </Grid>
+        <Flex align="end" justify="end" padding="0 16px 16px 16px">
+          <Heading>2023</Heading>
+        </Flex>
       </Flex>
     </Flex>
-    // <React.Fragment>
-    //   {showEventModal && <EventModal />}
-
-    //   <div className="h-screen flex flex-col">
-    //     <CalendarHeader />
-    //     <div className="flex flex-1">
-    //       <Sidebar />
-    //       <Month month={currenMonth} />
-    //     </div>
-    //   </div>
-    // </React.Fragment>
   )
 }

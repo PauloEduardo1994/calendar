@@ -54,6 +54,7 @@
     "@siakit/tooltip": "^0.0.4",
     "dayjs": "^1.11.7",
     "eslint-config-prettier": "^8.6.0",
+    "keen-slider": "^6.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "web-vitals": "^3.1.1"
