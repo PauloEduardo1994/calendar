@@ -345,14 +345,40 @@ export function App() {
 
   return (
     <Flex flex>
-      <Flex width={320}>
+      <Flex width={320} margin="64px 0 0 0">
         <Carrossel />
       </Flex>
       <Flex flex direction="column">
         <Flex align="center" justify="center" height={64}>
           <Heading>Janeiro</Heading>
         </Flex>
-        <Grid gap={8} flex padding rows={5} columns={7}>
+        <Flex>
+          <Grid flex gap={8} margin="16px 16px -8px 16px" columns={7}>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Domingo</Text>
+            </Flex>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Segunda-feira</Text>
+            </Flex>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Terça-feira</Text>
+            </Flex>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Quarta-feira</Text>
+            </Flex>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Quinta-feira</Text>
+            </Flex>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Sexta-feira</Text>
+            </Flex>
+            <Flex height="36px" align="center" justify="center">
+              <Text>Sábado</Text>
+            </Flex>
+          </Grid>
+        </Flex>
+
+        <Grid gap={8} flex padding columns={7}>
           <Card align="center" justify="center">
             <Text>1</Text>
           </Card>
