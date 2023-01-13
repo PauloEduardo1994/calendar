@@ -19,7 +19,6 @@ import 'keen-slider/keen-slider.min.css'
 import './styles.css'
 import { CardMonth, ColorDay } from './styled'
 
-console.log(Days)
 // console.log(Months)
 // console.log(Weeks)
 // console.log(Year)
