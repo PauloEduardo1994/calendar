@@ -10,7 +10,6 @@ import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
 import { Tooltip } from '@siakit/tooltip'
 
-import { Days } from './components/Days'
 // import { Months } from './components/Months'
 // import { Weeks } from './components/Weeks'
 // import { Year } from './components/Year'
