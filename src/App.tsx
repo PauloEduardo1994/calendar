@@ -4,7 +4,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import { Calendar } from 'phosphor-react'
 
 import { Card } from '@siakit/card'
-import { Theme, useTheme } from '@siakit/core'
+import { useTheme } from '@siakit/core'
 import { Heading } from '@siakit/heading'
 import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
@@ -524,10 +524,8 @@ function Arrow(props: any) {
 
 export function App() {
   const { togggleTheme, changeColor, theme } = useTheme()
-  const [themeDefault, setThemeDefault] = useState<Theme>('dark')
 
   changeColor('violet')
-  togggleTheme(themeDefault)
 
   return (
     <Flex flex>
@@ -543,10 +541,10 @@ export function App() {
               }}
               onClick={() => {
                 if (theme === 'dark') {
-                  setThemeDefault('light')
+                  togggleTheme('light')
                 }
                 if (theme === 'light') {
-                  setThemeDefault('dark')
+                  togggleTheme('dark')
                 }
               }}
             >
