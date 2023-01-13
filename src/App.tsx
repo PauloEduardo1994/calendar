@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
-import dayjs from 'dayjs'
 import { useKeenSlider } from 'keen-slider/react'
-import { Calendar, SmileyWink } from 'phosphor-react'
+import { Calendar } from 'phosphor-react'
 
 import { Card } from '@siakit/card'
-import { useTheme } from '@siakit/core'
+import { Theme, useTheme } from '@siakit/core'
 import { Heading } from '@siakit/heading'
 import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
@@ -525,10 +524,10 @@ function Arrow(props: any) {
 
 export function App() {
   const { togggleTheme, changeColor, theme } = useTheme()
-  const [themeDefault, setThemeDefault] = useState('dark')
+  const [themeDefault, setThemeDefault] = useState<Theme>('dark')
 
   changeColor('violet')
-  togggleTheme(String(themeDefault))
+  togggleTheme(themeDefault)
 
   return (
     <Flex flex>
