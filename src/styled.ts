@@ -21,9 +21,9 @@ export const CardMonth = styled(Card, {
 export const ColorDay = styled(Flex, {
   boxShadow: '$lg',
   backgroundColor: '$violet9',
-  borderRadius: '50%',
   alignItems: 'center',
   justifyContent: 'center',
+  borderRadius: '4px',
   padding: '5px',
   margin: '-5px',
 })

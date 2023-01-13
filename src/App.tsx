@@ -2,16 +2,28 @@ import React, { useState } from 'react'
 
 import dayjs from 'dayjs'
 import { useKeenSlider } from 'keen-slider/react'
+import { Calendar, SmileyWink } from 'phosphor-react'
 
 import { Card } from '@siakit/card'
 import { useTheme } from '@siakit/core'
 import { Heading } from '@siakit/heading'
 import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
+import { Tooltip } from '@siakit/tooltip'
+
+import { Days } from './components/Days'
+// import { Months } from './components/Months'
+// import { Weeks } from './components/Weeks'
+// import { Year } from './components/Year'
 
 import 'keen-slider/keen-slider.min.css'
 import './styles.css'
 import { CardMonth, ColorDay } from './styled'
+
+console.log(Days)
+// console.log(Months)
+// console.log(Weeks)
+// console.log(Year)
 
 function Carrossel() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -39,6 +51,41 @@ function Carrossel() {
                 <Heading>Janeiro</Heading>
               </Flex>
               <Grid flex padding gap columns={7}>
+                <Tooltip content="Domingo">
+                  <Flex>
+                    <Heading size="xs">D</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Segunda-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Terça-feira">
+                  <Flex>
+                    <Heading size="xs">T</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quarta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quinta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sexta-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sábado">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
                 <Text>1</Text>
                 <Text>2</Text>
                 <Text>3</Text>
@@ -88,6 +135,41 @@ function Carrossel() {
                 <Heading>Fevereio</Heading>
               </Flex>
               <Grid flex padding gap columns={7}>
+                <Tooltip content="Domingo">
+                  <Flex>
+                    <Heading size="xs">D</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Segunda-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Terça-feira">
+                  <Flex>
+                    <Heading size="xs">T</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quarta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quinta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sexta-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sábado">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
                 <Text>29</Text>
                 <Text>30</Text>
                 <Text>31</Text>
@@ -135,6 +217,41 @@ function Carrossel() {
                 <Heading>Março</Heading>
               </Flex>
               <Grid flex padding gap columns={7}>
+                <Tooltip content="Domingo">
+                  <Flex>
+                    <Heading size="xs">D</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Segunda-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Terça-feira">
+                  <Flex>
+                    <Heading size="xs">T</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quarta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quinta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sexta-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sábado">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
                 <Text>1</Text>
                 <Text>2</Text>
                 <Text>3</Text>
@@ -182,6 +299,41 @@ function Carrossel() {
                 <Heading>Abril</Heading>
               </Flex>
               <Grid flex padding gap columns={7}>
+                <Tooltip content="Domingo">
+                  <Flex>
+                    <Heading size="xs">D</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Segunda-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Terça-feira">
+                  <Flex>
+                    <Heading size="xs">T</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quarta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quinta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sexta-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sábado">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
                 <Text>29</Text>
                 <Text>30</Text>
                 <Text>31</Text>
@@ -229,6 +381,41 @@ function Carrossel() {
                 <Heading>Maio</Heading>
               </Flex>
               <Grid flex padding gap columns={7}>
+                <Tooltip content="Domingo">
+                  <Flex>
+                    <Heading size="xs">D</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Segunda-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Terça-feira">
+                  <Flex>
+                    <Heading size="xs">T</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quarta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Quinta-feira">
+                  <Flex>
+                    <Heading size="xs">Q</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sexta-feira">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
+                <Tooltip content="Sábado">
+                  <Flex>
+                    <Heading size="xs">S</Heading>
+                  </Flex>
+                </Tooltip>
                 <Text>26</Text>
                 <Text>27</Text>
                 <Text>28</Text>
@@ -337,19 +524,41 @@ function Arrow(props: any) {
 }
 
 export function App() {
-  const { togggleTheme, changeColor } = useTheme()
+  const { togggleTheme, changeColor, theme } = useTheme()
+  const [themeDefault, setThemeDefault] = useState('dark')
 
-  togggleTheme('dark')
   changeColor('violet')
-
-  const NewDate = dayjs()
-
-  console.log(NewDate)
+  togggleTheme(String(themeDefault))
 
   return (
     <Flex flex>
-      <Flex width={320} margin="64px 0 0 0">
-        <Carrossel />
+      <Flex width={320} direction="column">
+        <Flex padding align="center" gap>
+          <Tooltip content="Click to change theme">
+            <button
+              style={{
+                color: '#6e56cf',
+                cursor: 'pointer',
+                backgroundColor: 'transparent',
+                border: 'none',
+              }}
+              onClick={() => {
+                if (theme === 'dark') {
+                  setThemeDefault('light')
+                }
+                if (theme === 'light') {
+                  setThemeDefault('dark')
+                }
+              }}
+            >
+              <Calendar size={46} />
+            </button>
+          </Tooltip>
+          <Heading>Calendar</Heading>
+        </Flex>
+        <Flex flex margin="32px 0 0 0">
+          <Carrossel />
+        </Flex>
       </Flex>
       <Flex flex direction="column">
         <Flex align="center" justify="center" height={64}>

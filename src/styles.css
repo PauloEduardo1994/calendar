@@ -45,7 +45,7 @@ body {
   top: 10%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #fff;
+  fill: #6e56cf;
   cursor: pointer;
 }
 
@@ -59,5 +59,6 @@ body {
 }
 
 .arrow--disabled {
-  fill: rgba(255, 255, 255, 0.5);
+  fill: #969ba2;
+  cursor: no-drop;
 }
