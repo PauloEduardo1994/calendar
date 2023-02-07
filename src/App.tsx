@@ -10,17 +10,17 @@ import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
 import { Tooltip } from '@siakit/tooltip'
 
-// import { Months } from './components/Months'
-// import { Weeks } from './components/Weeks'
-// import { Year } from './components/Year'
+import { Months } from './components/Months'
+import { Weeks } from './components/Weeks'
+import { Year } from './components/Year'
 
 import 'keen-slider/keen-slider.min.css'
 import './styles.css'
 import { CardMonth, ColorDay } from './styled'
 
-// console.log(Months)
-// console.log(Weeks)
-// console.log(Year)
+console.log(Months)
+console.log(Weeks)
+console.log(Year)
 
 function Carrossel() {
   const [currentSlide, setCurrentSlide] = useState(0)
