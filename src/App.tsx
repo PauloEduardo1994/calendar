@@ -626,17 +626,17 @@ export function App() {
             <Flex>year: {dayjs().year()}</Flex>
           </Card> */}
         <Grid gap={8} flex padding columns={7}>
-          {GetDaysCalendar(month, year).map((days) => (
-            <Card key={days} align="center" justify="center">
-              <Text>
-                {days === new Date().getDate() ? (
-                  <CardMonth>{days}</CardMonth>
-                ) : (
-                  days
-                )}
-              </Text>
-            </Card>
-          ))}
+          {GetDaysCalendar(month, year).map((days) =>
+            days === new Date().getDate() ? (
+              <CardMonth key={days}>
+                <Text>{days}</Text>
+              </CardMonth>
+            ) : (
+              <Card key={days} align="center" justify="center">
+                <Text>{days}</Text>
+              </Card>
+            ),
+          )}
           {/* <Card align="center" justify="center">
             <Text>2</Text>
           </Card>

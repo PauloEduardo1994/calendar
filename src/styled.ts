@@ -16,6 +16,8 @@ export const Container = styled(Card, {
 export const CardMonth = styled(Card, {
   boxShadow: '$lg',
   borderColor: '$violet11',
+  alignItems: 'center',
+  justifyContent: 'center',
 })
 
 export const ColorDay = styled(Flex, {
