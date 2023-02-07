@@ -3,9 +3,8 @@ import dayjs from 'dayjs'
 import { Flex } from '@siakit/layout'
 import { Text } from '@siakit/text'
 
-const teste = dayjs().daysInMonth()
-const teste2 = teste - 1
-console.log(teste, teste2)
+const days = dayjs().daysInMonth()
+console.log(days)
 
 export function Days() {
   return (

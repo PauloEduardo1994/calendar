@@ -10,17 +10,18 @@ import { Flex, Grid } from '@siakit/layout'
 import { Text } from '@siakit/text'
 import { Tooltip } from '@siakit/tooltip'
 
-import { Months } from './components/Months'
-import { Weeks } from './components/Weeks'
-import { Year } from './components/Year'
+import { Days } from './components/Days'
+// import { Months } from './components/Months'
+// import { Weeks } from './components/Weeks'
+// import { Year } from './components/Year'
 
 import 'keen-slider/keen-slider.min.css'
 import './styles.css'
 import { CardMonth, ColorDay } from './styled'
 
-console.log(Months)
-console.log(Weeks)
-console.log(Year)
+// import dayjs from 'dayjs'
+
+console.log(Days)
 
 function Carrossel() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -525,6 +526,32 @@ export function App() {
 
   changeColor('violet')
 
+  function GetDaysCalendar(month: any, year: any) {
+    const firstDayOfWeek = new Date(year, month, 1).getDay() - 1
+
+    // console.log(firstDayOfWeek)
+
+    const array = []
+
+    for (let i = -firstDayOfWeek; i < 42 - firstDayOfWeek; i++) {
+      const dt = new Date(year, month, i)
+      array.push(dt.getDate())
+      // console.log(dt.getDate())
+    }
+    return array
+
+    // console.log(firstDayOfWeek,lastDayOfThisMonth)
+  }
+
+  const now = new Date()
+  const month = now.getMonth()
+  const year = now.getFullYear()
+  GetDaysCalendar(month, year)
+
+  console.log(now)
+  console.log(month)
+  console.log(year)
+
   return (
     <Flex flex>
       <Flex width={320} direction="column">
@@ -585,11 +612,32 @@ export function App() {
           </Grid>
         </Flex>
 
+        {/* <Card padding gap direction="column">
+            <Flex>qtd dias no mês: {dayjs().daysInMonth()}</Flex>
+
+            <Flex>dia de hoje: {dayjs().date()}</Flex>
+
+            <Flex>locale: {dayjs().locale()}</Flex>
+
+            <Flex>data de hoje: {dayjs().millisecond()}</Flex>
+
+            <Flex>month: {dayjs().month() === 1 ? 'Fevereiro' : ''}</Flex>
+
+            <Flex>year: {dayjs().year()}</Flex>
+          </Card> */}
         <Grid gap={8} flex padding columns={7}>
-          <Card align="center" justify="center">
-            <Text>1</Text>
-          </Card>
-          <Card align="center" justify="center">
+          {GetDaysCalendar(month, year).map((days) => (
+            <Card key={days} align="center" justify="center">
+              <Text>
+                {days === new Date().getDate() ? (
+                  <CardMonth>{days}</CardMonth>
+                ) : (
+                  days
+                )}
+              </Text>
+            </Card>
+          ))}
+          {/* <Card align="center" justify="center">
             <Text>2</Text>
           </Card>
           <Card align="center" justify="center">
@@ -690,7 +738,7 @@ export function App() {
           </Card>
           <Card align="center" justify="center">
             <Text>4</Text>
-          </Card>
+          </Card> */}
         </Grid>
         <Flex align="end" justify="end" padding="0 16px 16px 16px">
           <Heading>2023</Heading>
