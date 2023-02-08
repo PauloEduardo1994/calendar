@@ -612,19 +612,6 @@ export function App() {
           </Grid>
         </Flex>
 
-        {/* <Card padding gap direction="column">
-            <Flex>qtd dias no mês: {dayjs().daysInMonth()}</Flex>
-
-            <Flex>dia de hoje: {dayjs().date()}</Flex>
-
-            <Flex>locale: {dayjs().locale()}</Flex>
-
-            <Flex>data de hoje: {dayjs().millisecond()}</Flex>
-
-            <Flex>month: {dayjs().month() === 1 ? 'Fevereiro' : ''}</Flex>
-
-            <Flex>year: {dayjs().year()}</Flex>
-          </Card> */}
         <Grid gap={8} flex padding columns={7}>
           {GetDaysCalendar(month, year).map((days) =>
             days === new Date().getDate() ? (
@@ -637,108 +624,6 @@ export function App() {
               </Card>
             ),
           )}
-          {/* <Card align="center" justify="center">
-            <Text>2</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>3</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>4</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>5</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>6</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>7</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>8</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>9</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>10</Text>
-          </Card>
-          <CardMonth align="center" justify="center">
-            <Heading size="xs">11</Heading>
-          </CardMonth>
-          <Card align="center" justify="center">
-            <Text>12</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>13</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>14</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>15</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>16</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>17</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>18</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>19</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>20</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>21</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>22</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>23</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>24</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>25</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>26</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>27</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>28</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>29</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>30</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>31</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>1</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>2</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>3</Text>
-          </Card>
-          <Card align="center" justify="center">
-            <Text>4</Text>
-          </Card> */}
         </Grid>
         <Flex align="end" justify="end" padding="0 16px 16px 16px">
           <Heading>2023</Heading>
