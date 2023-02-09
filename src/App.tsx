@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useKeenSlider } from 'keen-slider/react'
 import { Calendar } from 'phosphor-react'
@@ -7,10 +7,11 @@ import { Card } from '@siakit/card'
 import { useTheme } from '@siakit/core'
 import { Heading } from '@siakit/heading'
 import { Flex, Grid } from '@siakit/layout'
+import { useLoading } from '@siakit/loading'
 import { Text } from '@siakit/text'
 import { Tooltip } from '@siakit/tooltip'
 
-import { Days } from './components/Days'
+// import { Days } from './components/Days'
 // import { Months } from './components/Months'
 // import { Weeks } from './components/Weeks'
 // import { Year } from './components/Year'
@@ -19,9 +20,22 @@ import 'keen-slider/keen-slider.min.css'
 import './styles.css'
 import { CardMonth, ColorDay } from './styled'
 
-// import dayjs from 'dayjs'
-
-console.log(Days)
+export const initialData = {
+  brandList: [
+    {
+      id: 1,
+      name: 'Tesla',
+    },
+    {
+      id: 2,
+      name: 'Tesla1',
+    },
+    {
+      id: 3,
+      name: 'Tesla2',
+    },
+  ],
+}
 
 function Carrossel() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -33,6 +47,7 @@ function Carrossel() {
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
+      console.log(initialData.brandList[0])
     },
     created() {
       setLoaded(true)
@@ -127,334 +142,6 @@ function Carrossel() {
               </Flex>
             </Flex>
           </CardMonth>
-          <CardMonth padding className="keen-slider__slide">
-            <Flex flex direction="column">
-              <Flex justify="center" flex>
-                <Heading>Fevereio</Heading>
-              </Flex>
-              <Grid flex padding gap columns={7}>
-                <Tooltip content="Domingo">
-                  <Flex>
-                    <Heading size="xs">D</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Segunda-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Terça-feira">
-                  <Flex>
-                    <Heading size="xs">T</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quarta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quinta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sexta-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sábado">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Text>29</Text>
-                <Text>30</Text>
-                <Text>31</Text>
-                <Text>1</Text>
-                <Text>2</Text>
-                <Text>3</Text>
-                <Text>4</Text>
-                <Text>1</Text>
-                <Text>2</Text>
-                <Text>3</Text>
-                <Text>4</Text>
-                <Text>5</Text>
-                <Text>6</Text>
-                <Text>7</Text>
-                <Text>8</Text>
-                <Text>9</Text>
-                <Text>10</Text>
-                <Text>11</Text>
-                <Text>12</Text>
-                <Text>13</Text>
-                <Text>14</Text>
-                <Text>15</Text>
-                <Text>16</Text>
-                <Text>17</Text>
-                <Text>18</Text>
-                <Text>19</Text>
-                <Text>20</Text>
-                <Text>21</Text>
-                <Text>22</Text>
-                <Text>23</Text>
-                <Text>24</Text>
-                <Text>25</Text>
-                <Text>26</Text>
-                <Text>27</Text>
-                <Text>28</Text>
-              </Grid>
-              <Flex align="end" justify="end" flex>
-                <Heading size="xs">2023</Heading>
-              </Flex>
-            </Flex>
-          </CardMonth>
-          <CardMonth padding className="keen-slider__slide">
-            <Flex flex direction="column">
-              <Flex justify="center" flex>
-                <Heading>Março</Heading>
-              </Flex>
-              <Grid flex padding gap columns={7}>
-                <Tooltip content="Domingo">
-                  <Flex>
-                    <Heading size="xs">D</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Segunda-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Terça-feira">
-                  <Flex>
-                    <Heading size="xs">T</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quarta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quinta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sexta-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sábado">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Text>1</Text>
-                <Text>2</Text>
-                <Text>3</Text>
-                <Text>4</Text>
-                <Text>5</Text>
-                <Text>6</Text>
-                <Text>7</Text>
-                <Text>8</Text>
-                <Text>9</Text>
-                <Text>10</Text>
-                <Text>11</Text>
-                <Text>12</Text>
-                <Text>13</Text>
-                <Text>14</Text>
-                <Text>15</Text>
-                <Text>16</Text>
-                <Text>17</Text>
-                <Text>18</Text>
-                <Text>19</Text>
-                <Text>20</Text>
-                <Text>21</Text>
-                <Text>22</Text>
-                <Text>23</Text>
-                <Text>24</Text>
-                <Text>25</Text>
-                <Text>26</Text>
-                <Text>27</Text>
-                <Text>28</Text>
-                <Text>29</Text>
-                <Text>30</Text>
-                <Text>31</Text>
-                <Text>1</Text>
-                <Text>2</Text>
-                <Text>3</Text>
-                <Text>4</Text>
-              </Grid>
-              <Flex align="end" justify="end" flex>
-                <Heading size="xs">2023</Heading>
-              </Flex>
-            </Flex>
-          </CardMonth>
-          <CardMonth padding className="keen-slider__slide">
-            <Flex flex direction="column">
-              <Flex justify="center" flex>
-                <Heading>Abril</Heading>
-              </Flex>
-              <Grid flex padding gap columns={7}>
-                <Tooltip content="Domingo">
-                  <Flex>
-                    <Heading size="xs">D</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Segunda-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Terça-feira">
-                  <Flex>
-                    <Heading size="xs">T</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quarta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quinta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sexta-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sábado">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Text>29</Text>
-                <Text>30</Text>
-                <Text>31</Text>
-                <Text>1</Text>
-                <Text>2</Text>
-                <Text>3</Text>
-                <Text>4</Text>
-                <Text>5</Text>
-                <Text>6</Text>
-                <Text>7</Text>
-                <Text>8</Text>
-                <Text>9</Text>
-                <Text>10</Text>
-                <Text>11</Text>
-                <Text>12</Text>
-                <Text>13</Text>
-                <Text>14</Text>
-                <Text>15</Text>
-                <Text>16</Text>
-                <Text>17</Text>
-                <Text>18</Text>
-                <Text>19</Text>
-                <Text>20</Text>
-                <Text>21</Text>
-                <Text>22</Text>
-                <Text>23</Text>
-                <Text>24</Text>
-                <Text>25</Text>
-                <Text>26</Text>
-                <Text>27</Text>
-                <Text>28</Text>
-                <Text>29</Text>
-                <Text>30</Text>
-                <Text>1</Text>
-                <Text>2</Text>
-              </Grid>
-              <Flex align="end" justify="end" flex>
-                <Heading size="xs">2023</Heading>
-              </Flex>
-            </Flex>
-          </CardMonth>
-          <CardMonth padding className="keen-slider__slide">
-            <Flex flex direction="column">
-              <Flex justify="center" flex>
-                <Heading>Maio</Heading>
-              </Flex>
-              <Grid flex padding gap columns={7}>
-                <Tooltip content="Domingo">
-                  <Flex>
-                    <Heading size="xs">D</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Segunda-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Terça-feira">
-                  <Flex>
-                    <Heading size="xs">T</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quarta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Quinta-feira">
-                  <Flex>
-                    <Heading size="xs">Q</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sexta-feira">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Tooltip content="Sábado">
-                  <Flex>
-                    <Heading size="xs">S</Heading>
-                  </Flex>
-                </Tooltip>
-                <Text>26</Text>
-                <Text>27</Text>
-                <Text>28</Text>
-                <Text>29</Text>
-                <Text>30</Text>
-                <Text>1</Text>
-                <Text>2</Text>
-                <Text>3</Text>
-                <Text>4</Text>
-                <Text>5</Text>
-                <Text>6</Text>
-                <Text>7</Text>
-                <Text>8</Text>
-                <Text>9</Text>
-                <Text>10</Text>
-                <Text>11</Text>
-                <Text>12</Text>
-                <Text>13</Text>
-                <Text>14</Text>
-                <Text>15</Text>
-                <Text>16</Text>
-                <Text>17</Text>
-                <Text>18</Text>
-                <Text>19</Text>
-                <Text>20</Text>
-                <Text>21</Text>
-                <Text>22</Text>
-                <Text>23</Text>
-                <Text>24</Text>
-                <Text>25</Text>
-                <Text>26</Text>
-                <Text>27</Text>
-                <Text>28</Text>
-                <Text>29</Text>
-                <Text>30</Text>
-              </Grid>
-              <Flex align="end" justify="end" flex>
-                <Heading size="xs">2023</Heading>
-              </Flex>
-            </Flex>
-          </CardMonth>
         </div>
         {loaded && instanceRef.current && (
           <>
@@ -522,31 +209,37 @@ function Arrow(props: any) {
 }
 
 export function App() {
+  const [data, setData] = useState<number[]>([])
   const { togggleTheme, changeColor, theme } = useTheme()
+  const { setLoading } = useLoading()
 
   changeColor('violet')
-
-  function GetDaysCalendar(month: any, year: any) {
-    const firstDayOfWeek = new Date(year, month, 1).getDay() - 1
-
-    // console.log(firstDayOfWeek)
-
-    const array = []
-
-    for (let i = -firstDayOfWeek; i < 42 - firstDayOfWeek; i++) {
-      const dt = new Date(year, month, i)
-      array.push(dt.getDate())
-      // console.log(dt.getDate())
-    }
-    return array
-
-    // console.log(firstDayOfWeek,lastDayOfThisMonth)
-  }
 
   const now = new Date()
   const month = now.getMonth()
   const year = now.getFullYear()
-  GetDaysCalendar(month, year)
+  // GetDaysCalendar(month, year)
+
+  useEffect(() => {
+    async function loadData(): Promise<void> {
+      setLoading(true)
+
+      const firstDayOfWeek = new Date(year, month, 1).getDay() - 1
+
+      const array = []
+
+      for (let i = -firstDayOfWeek; i < 42 - firstDayOfWeek; i++) {
+        const response = new Date(year, month, i)
+        array.push(response.getDate())
+      }
+
+      setData(array)
+
+      setLoading(false)
+    }
+
+    loadData()
+  }, [setLoading, month, year])
 
   console.log(now)
   console.log(month)
@@ -611,9 +304,8 @@ export function App() {
             </Flex>
           </Grid>
         </Flex>
-
         <Grid gap={8} flex padding columns={7}>
-          {GetDaysCalendar(month, year).map((days) =>
+          {data.map((days) =>
             days === new Date().getDate() ? (
               <CardMonth key={days}>
                 <Text>{days}</Text>
